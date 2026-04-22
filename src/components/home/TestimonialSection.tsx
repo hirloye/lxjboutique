@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
+import { FloralUnderline } from "@/components/ui/FloralUnderline";
+import { ButterflyField } from "@/components/ui/ButterflyField";
 
 const testimonials = [
   {
@@ -29,15 +31,23 @@ const testimonials = [
 
 export function TestimonialSection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
+    <section className="pt-6 pb-4 md:pt-16 md:pb-8 relative overflow-hidden bg-background">
       {/* Decorative Blur */}
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-secondary/30 to-transparent pointer-events-none" />
       
+      {/* Magical Background Effect */}
+      <ButterflyField count={3} lowProfile={true} />
+      
+
       <div className="container px-6 mx-auto relative z-10 text-center">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <p className="text-primary font-semibold tracking-wider uppercase text-sm mb-3">Real Experiences</p>
+        <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-2">
           Client Stories
         </h2>
-        <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-16" />
+        <FloralUnderline />
+        <p className="text-muted-foreground font-sans max-w-2xl mx-auto mt-4 mb-8">
+          Hear from the individuals who found their unique expression and magical style at LXJ Boutique.
+        </p>
 
         <div className="max-w-4xl mx-auto">
           <Carousel

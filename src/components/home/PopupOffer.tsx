@@ -8,9 +8,13 @@ export function PopupOffer() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
+    if (hasSeenPopup) return;
+
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 2000); // 2 seconds after page load
+      sessionStorage.setItem("hasSeenPopup", "true");
+    }, 3000); // 3 seconds after page load
 
     return () => clearTimeout(timer);
   }, []);
