@@ -1,6 +1,7 @@
 import { PageBanner } from "@/components/ui/PageBanner";
 import { FloralUnderline } from "@/components/ui/FloralUnderline";
 import { ButterflyField } from "@/components/ui/ButterflyField";
+import { DynamicProductGrid } from "@/components/shared/DynamicProductGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,6 +35,11 @@ export default function NewArrivalsPage() {
           </div>
         </div>
       </div>
+
+      {/* Dynamic Products from Admin Panel */}
+      <section className="bg-background relative z-20 pb-20">
+        <DynamicProductGrid category="new_arrival" />
+      </section>
 
       <section className="py-32 container px-6 mx-auto">
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

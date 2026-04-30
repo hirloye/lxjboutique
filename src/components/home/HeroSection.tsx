@@ -57,9 +57,9 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a 
-              href="https://www.google.com/maps/place/LXJ+Boutique+%26+Fashion/@13.1082018,80.1082927,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5263ec883ebdeb:0x3ff47e6740ca0183!8m2!3d13.1082018!4d80.1082927!16s%2Fg%2F11z2rsg1v3?entry=ttu" 
-              target="_blank" 
+            <a
+              href="https://www.google.com/maps/place/LXJ+Boutique+%26+Fashion/@13.1082018,80.1082927,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5263ec883ebdeb:0x3ff47e6740ca0183!8m2!3d13.1082018!4d80.1082927!16s%2Fg%2F11z2rsg1v3?entry=ttu"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-lg font-medium text-primary-foreground shadow-[0_0_20px_rgba(112,22,45,0.4)] transition-all hover:bg-primary/90 hover:scale-105"
             >
@@ -92,7 +92,7 @@ export function HeroSection() {
           >
             <div className="relative">
               <Image
-                src="/images/fairy.png"
+                src="/images/Fairy_Saree.png"
                 alt="LXJ Fairy Mascot"
                 width={500}
                 height={500}

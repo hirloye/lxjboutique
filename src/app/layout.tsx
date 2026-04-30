@@ -29,8 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { ClientLayout } from "@/components/layout/ClientLayout";
 
 export default function RootLayout({
   children,
@@ -43,11 +42,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className={`min-h-full flex flex-col font-sans bg-background text-foreground uppercase-none`}>
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

@@ -36,54 +36,51 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/lxj_boutique._" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-white/80 transition-colors">
-              Instagram
-            </a>
-            <span className="text-white/50">•</span>
-            <a href="#" className="font-bold hover:text-white/80 transition-colors">
-              Facebook
-            </a>
-            <span className="text-white/50">•</span>
-            <a href="#" className="font-bold hover:text-white/80 transition-colors">
-              Twitter
-            </a>
+                Instagram
+              </a>
+              <span className="text-white/50">•</span>
+              <a href="#" className="font-bold hover:text-white/80 transition-colors">
+                Facebook
+              </a>
+
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-heading text-xl font-bold mb-6">Quick Links</h4>
+            <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
+              <li><Link href="/" className="hover:text-white hover:underline transition-all">Home</Link></li>
+              <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Collections</Link></li>
+              <li><Link href="/new-arrivals" className="hover:text-white hover:underline transition-all">New Arrivals</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-heading text-xl font-bold mb-6">Categories</h4>
+            <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
+              <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Premium Sarees</Link></li>
+              <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Designer Kurtis</Link></li>
+              <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Bridal Lehengas</Link></li>
+              <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Luxury Handbags</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-heading text-xl font-bold mb-6">Contact Us</h4>
+            <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
+              <li>Email: contact@lxjboutique.com</li>
+              <li>Phone: +91 88385 62616</li>
+              <li>Address:No 167/3, 1st floor, Kalyan Tower, Poonamallee - Avadi High Rd, Ram Nagar, Avadi, Chennai-600054</li>
+            </ul>
           </div>
         </div>
 
-        <div>
-          <h4 className="font-heading text-xl font-bold mb-6">Quick Links</h4>
-          <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
-            <li><Link href="/" className="hover:text-white hover:underline transition-all">Home</Link></li>
-            <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Collections</Link></li>
-            <li><Link href="/new-arrivals" className="hover:text-white hover:underline transition-all">New Arrivals</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-heading text-xl font-bold mb-6">Categories</h4>
-          <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
-            <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Premium Sarees</Link></li>
-            <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Designer Kurtis</Link></li>
-            <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Bridal Lehengas</Link></li>
-            <li><Link href="/collections" className="hover:text-white hover:underline transition-all">Luxury Handbags</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-heading text-xl font-bold mb-6">Contact Us</h4>
-          <ul className="flex flex-col gap-3 font-sans text-primary-foreground/80">
-            <li>Email: contact@lxjboutique.com</li>
-            <li>Phone: +91 88385 62616</li>
-            <li>Address:No 167/3, 1st floor, Kalyan Tower, Poonamallee - Avadi High Rd, Ram Nagar, Avadi, Chennai-600054</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-sans text-primary-foreground/60">
-        <p>&copy; {new Date().getFullYear()} LXJ Boutique. All rights reserved.</p>
-        <div className="flex gap-4 mt-4 md:mt-0">
-          <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-white">Terms of Service</Link>
-        </div>
+        <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-sans text-primary-foreground/60">
+          <p>&copy; {new Date().getFullYear()} LXJ Boutique. All rights reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
