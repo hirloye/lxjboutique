@@ -92,7 +92,7 @@ export function HeroSection() {
           >
             <div className="relative">
               <Image
-                src="/images/Fairy_Saree.png"
+                src="/images/Fairy_New_Version.webp"
                 alt="LXJ Fairy Mascot"
                 width={500}
                 height={500}

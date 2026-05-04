@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { createClient } from '@/utils/supabase/client'
 import { Plus, Trash2, Image as ImageIcon, Loader2, Edit } from 'lucide-react'
 import { logout } from '@/app/admin/actions'
@@ -13,7 +14,7 @@ type Product = {
   title: string
   description: string
   image_url: string
-  price: string
+  sub_category: string
   category: Category
 }
 
@@ -97,7 +98,7 @@ export default function DashboardClient() {
           .update({
             title,
             description,
-            price: activeTab === 'offer' ? null : itemCategory,
+            sub_category: activeTab === 'offer' ? null : itemCategory,
             image_url: publicUrl,
           })
           .eq('id', editingId)
@@ -112,7 +113,7 @@ export default function DashboardClient() {
             {
               title,
               description,
-              price: activeTab === 'offer' ? null : itemCategory,
+              sub_category: activeTab === 'offer' ? null : itemCategory,
               image_url: publicUrl,
               category: activeTab,
             }
@@ -146,8 +147,8 @@ export default function DashboardClient() {
     setEditingId(item.id)
     setTitle(item.title)
     setDescription(item.description || '')
-    if (activeTab !== 'offer' && item.price) {
-      setItemCategory(item.price)
+    if (activeTab !== 'offer' && item.sub_category) {
+      setItemCategory(item.sub_category)
     }
     setEditingImageUrl(item.image_url)
     setImageFile(null)
@@ -282,7 +283,7 @@ export default function DashboardClient() {
                       <span className="font-medium text-primary line-clamp-1 relative z-0">{imageFile.name}</span>
                     ) : editingImageUrl ? (
                       <div className="absolute inset-0 opacity-50">
-                         <img src={editingImageUrl} alt="Current" className="w-full h-full object-cover" />
+                         <Image src={editingImageUrl} alt="Current" fill className="object-cover" sizes="300px" />
                          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white">
                            <ImageIcon className="w-8 h-8 mb-2" />
                            <span className="text-sm">Click to change image</span>
@@ -333,11 +334,11 @@ export default function DashboardClient() {
                 {products.map((item) => (
                   <div key={item.id} className="bg-background border border-primary/10 rounded-2xl overflow-hidden group">
                     <div className="aspect-square relative overflow-hidden bg-secondary/20">
-                      <img src={item.image_url} alt={item.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                      <Image src={item.image_url} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-foreground line-clamp-1">{item.title}</h3>
-                      {item.price && <p className="text-primary font-medium mt-1">{item.price}</p>}
+                      {item.sub_category && <p className="text-primary font-medium mt-1">{item.sub_category}</p>}
                       <div className="flex gap-2 mt-4">
                         <button 
                           onClick={() => handleEdit(item)}

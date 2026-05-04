@@ -24,7 +24,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 88385 62616", "+91 44 1234 5678"]
+      details: ["+91 88385 62616", "+91 93846 98699"]
     },
     {
       icon: Mail,
@@ -52,7 +52,7 @@ export default function ContactPage() {
         <div className="bg-secondary/30 backdrop-blur-xl border border-primary/10 rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-12 text-center relative overflow-hidden group">
           {/* Magical Background Effect */}
           <ButterflyField count={4} lowProfile={true} />
-          
+
           {/* Decorative Background Elements */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
@@ -87,7 +87,7 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mx-auto">
                 <a
-                  href="https://wa.me/8838562616"
+                  href="https://wa.me/+918838562616"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 px-8 py-5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-2xl font-bold text-lg shadow-lg transition-all hover:scale-[1.02]"

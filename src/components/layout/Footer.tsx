@@ -39,7 +39,7 @@ export function Footer() {
                 Instagram
               </a>
               <span className="text-white/50">•</span>
-              <a href="#" className="font-bold hover:text-white/80 transition-colors">
+              <a href="https://www.facebook.com/share/1Nnrn1WCg5/" className="font-bold hover:text-white/80 transition-colors">
                 Facebook
               </a>
 

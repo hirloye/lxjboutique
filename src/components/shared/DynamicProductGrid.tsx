@@ -3,7 +3,7 @@ import { ProductGridClient } from './ProductGridClient'
 
 export async function DynamicProductGrid({ category, filter }: { category: 'new_arrival' | 'offer' | 'collection', filter?: string }) {
   const supabase = await createClient()
-  
+
   let query = supabase
     .from('products')
     .select('*')
@@ -11,7 +11,7 @@ export async function DynamicProductGrid({ category, filter }: { category: 'new_
     .order('created_at', { ascending: false })
 
   if (filter && filter !== 'all') {
-    query = query.eq('price', filter)
+    query = query.eq('sub_category', filter)
   }
 
   const { data: products, error } = await query

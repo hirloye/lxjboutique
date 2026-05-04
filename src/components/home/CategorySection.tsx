@@ -49,7 +49,7 @@ export function CategorySection({ currentFilter }: { currentFilter?: string }) {
 
 
         <motion.div
-          className="grid grid-cols-6 gap-2 sm:gap-4 lg:gap-6 pb-6 pt-2 px-2 md:px-0 w-full"
+          className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4 lg:gap-6 pb-6 pt-2 px-2 md:px-0 w-full"
           variants={containerVariants}
           initial={isMobile ? "show" : "hidden"}
           whileInView="show"
@@ -74,6 +74,7 @@ export function CategorySection({ currentFilter }: { currentFilter?: string }) {
                   src={category.image}
                   alt={category.name}
                   fill
+                  sizes="(max-width: 640px) 15vw, (max-width: 1024px) 10vw, 8vw"
                   className="object-contain p-2 sm:p-6 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:-translate-y-1 sm:group-hover:-translate-y-2 opacity-90"
                 />
               </div>
