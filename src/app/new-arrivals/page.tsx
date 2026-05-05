@@ -1,6 +1,4 @@
 import { PageBanner } from "@/components/ui/PageBanner";
-import { FloralUnderline } from "@/components/ui/FloralUnderline";
-import { ButterflyField } from "@/components/ui/ButterflyField";
 import { DynamicProductGrid } from "@/components/shared/DynamicProductGrid";
 import { Metadata } from "next";
 
@@ -31,7 +29,7 @@ export default function NewArrivalsPage() {
             </div>
             <div className="p-8 rounded-[2rem] bg-secondary/20 border border-primary/5 backdrop-blur-sm">
                <h3 className="font-heading text-2xl font-bold text-foreground mb-4">Premium Fabrics</h3>
-               <p className="font-sans text-muted-foreground">This season's collection features hand-woven silks and ethically sourced premium cotton blends.</p>
+               <p className="font-sans text-muted-foreground">This season&apos;s collection features hand-woven silks and ethically sourced premium cotton blends.</p>
             </div>
             <div className="p-8 rounded-[2rem] bg-secondary/20 border border-primary/5 backdrop-blur-sm">
                <h3 className="font-heading text-2xl font-bold text-foreground mb-4">Express Tailoring</h3>

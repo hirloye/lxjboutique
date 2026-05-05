@@ -38,7 +38,7 @@ export function ContactForm() {
           </div>
           <div>
             <h3 className="font-heading text-2xl font-bold text-foreground">Send a Message</h3>
-            <p className="font-sans text-muted-foreground text-sm">We'll get back to you within 24 hours.</p>
+            <p className="font-sans text-muted-foreground text-sm">We&apos;ll get back to you within 24 hours.</p>
           </div>
         </div>
 

@@ -1,6 +1,4 @@
 import { PageBanner } from "@/components/ui/PageBanner";
-import { FloralUnderline } from "@/components/ui/FloralUnderline";
-import { ButterflyField } from "@/components/ui/ButterflyField";
 import { DynamicProductGrid } from "@/components/shared/DynamicProductGrid";
 import { Metadata } from "next";
 

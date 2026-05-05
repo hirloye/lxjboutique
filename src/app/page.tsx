@@ -1,5 +1,3 @@
-import { TopOfferBar } from "@/components/layout/TopOfferBar";
-import { Header } from "@/components/layout/Header";
 import { HeroSection } from "@/components/home/HeroSection";
 import { GallerySection } from "@/components/home/GallerySection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
@@ -15,8 +13,9 @@ export default function Home() {
         <HeroSection />
         <GallerySection />
         <FeaturesSection />
-        <StyleFinder />
         <Lookbook />
+        <StyleFinder />
+
         <TestimonialSection />
       </div>
 

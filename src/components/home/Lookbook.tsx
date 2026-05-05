@@ -28,5 +28,5 @@ export async function Lookbook() {
     return null // Or a fallback
   }
 
-  return <LookbookClient products={validProducts as any} />
+  return <LookbookClient products={validProducts as Array<{id: number, title: string, sub_category: string, image_url: string}>} />
 }

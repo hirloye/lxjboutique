@@ -4,7 +4,7 @@ import { updateSession } from '@/utils/supabase/middleware'
 
 export async function proxy(request: NextRequest) {
   // Update Supabase session
-  let response = await updateSession(request)
+  const response = await updateSession(request)
 
   const path = request.nextUrl.pathname
   const isDashboardRoute = path.startsWith('/admin/dashboard')

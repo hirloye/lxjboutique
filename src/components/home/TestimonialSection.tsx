@@ -64,7 +64,7 @@ export function TestimonialSection() {
                     <Card className="h-full bg-background/50 backdrop-blur-md border-border/50 shadow-sm hover:shadow-md transition-shadow">
                       <CardContent className="flex flex-col items-center justify-center p-8 text-center h-full">
                         <Quote className="w-10 h-10 text-primary/40 mb-4" />
-                        <p className="font-sans text-muted-foreground italic mb-6">"{t.review}"</p>
+                        <p className="font-sans text-muted-foreground italic mb-6">&quot;{t.review}&quot;</p>
                         <div>
                           <h4 className="font-heading text-xl font-bold text-foreground">{t.name}</h4>
                           <span className="text-sm text-primary">{t.role}</span>

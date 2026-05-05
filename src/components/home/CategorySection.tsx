@@ -30,7 +30,6 @@ const itemVariants: Variants = {
 
 export function CategorySection({ currentFilter }: { currentFilter?: string }) {
   const router = useRouter();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -55,12 +54,10 @@ export function CategorySection({ currentFilter }: { currentFilter?: string }) {
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <motion.div
               key={category.id}
               variants={itemVariants}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => router.push(`?filter=${category.value}`, { scroll: false })}
               className={`group relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer border bg-background shadow-sm transition-all duration-300 hover:border-primary/50 flex flex-col aspect-square sm:aspect-auto sm:h-[150px] lg:h-[200px] ${
                 currentFilter === category.value || (!currentFilter && category.value === "all") 

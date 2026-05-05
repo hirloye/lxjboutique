@@ -8,7 +8,7 @@ export const createClient = async () => {
 
   if (!supabaseUrl || !supabaseKey) {
     console.warn('Supabase environment variables are missing on the server. Returning null client.');
-    return {} as any;
+    return {} as any; // eslint-disable-line @typescript-eslint/no-explicit-any
   }
   
   return createServerClient(

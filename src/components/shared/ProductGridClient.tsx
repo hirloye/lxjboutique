@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -18,21 +18,21 @@ export function ProductGridClient({ products }: { products: Product[] }) {
 
   const currentIndex = selectedProduct ? products.findIndex(p => p.id === selectedProduct.id) : -1;
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (currentIndex < products.length - 1) {
       setSelectedProduct(products[currentIndex + 1]);
     } else {
       setSelectedProduct(products[0]);
     }
-  };
+  }, [currentIndex, products]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (currentIndex > 0) {
       setSelectedProduct(products[currentIndex - 1]);
     } else {
       setSelectedProduct(products[products.length - 1]);
     }
-  };
+  }, [currentIndex, products]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -43,7 +43,7 @@ export function ProductGridClient({ products }: { products: Product[] }) {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedProduct, currentIndex]);
+  }, [selectedProduct, handleNext, handlePrev]);
 
   return (
     <>

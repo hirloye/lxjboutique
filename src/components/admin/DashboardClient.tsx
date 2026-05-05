@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { createClient } from '@/utils/supabase/client'
 import { Plus, Trash2, Image as ImageIcon, Loader2, Edit } from 'lucide-react'
 import { logout } from '@/app/admin/actions'
+import { useCallback } from 'react'
 
 type Category = 'new_arrival' | 'offer' | 'collection'
 
@@ -33,12 +34,16 @@ export default function DashboardClient() {
   const [editingId, setEditingId] = useState<number | null>(null)
   const [editingImageUrl, setEditingImageUrl] = useState<string | null>(null)
 
-  useEffect(() => {
-    resetForm()
-    fetchProducts()
-  }, [activeTab])
+  const resetForm = useCallback(() => {
+    setTitle('')
+    setDescription('')
+    setItemCategory('saree')
+    setImageFile(null)
+    setEditingId(null)
+    setEditingImageUrl(null)
+  }, [])
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     setLoading(true)
     const { data, error } = await supabase
       .from('products')
@@ -52,7 +57,12 @@ export default function DashboardClient() {
       setProducts(data || [])
     }
     setLoading(false)
-  }
+  }, [activeTab, supabase])
+
+  useEffect(() => {
+    resetForm()
+    fetchProducts()
+  }, [activeTab, fetchProducts, resetForm])
 
   const handleAddProduct = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -126,22 +136,16 @@ export default function DashboardClient() {
       resetForm()
       fetchProducts()
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error saving product:', error)
-      alert(error.message || 'Error saving product')
+      const message = error instanceof Error ? error.message : 'Error saving product'
+      alert(message)
     } finally {
       setUploading(false)
     }
   }
 
-  const resetForm = () => {
-    setTitle('')
-    setDescription('')
-    setItemCategory('saree')
-    setImageFile(null)
-    setEditingId(null)
-    setEditingImageUrl(null)
-  }
+
 
   const handleEdit = (item: Product) => {
     setEditingId(item.id)
@@ -173,7 +177,7 @@ export default function DashboardClient() {
 
       if (error) throw error
       fetchProducts()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error deleting:', error)
       alert('Error deleting item')
     }

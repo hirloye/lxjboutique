@@ -16,7 +16,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -156,7 +156,7 @@ export function Header() {
               <div className="mt-auto pt-10 border-t border-border">
                 <p className="font-sans text-sm text-muted-foreground mb-6 tracking-wide uppercase">Direct Response</p>
                 <div className="flex flex-col gap-4">
-                  <a href="https://wa.me/8838562616" target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-xl bg-[#25D366] text-white font-bold gap-2 hover:opacity-90 transition-opacity">
+                  <a href="https://wa.me/+918838562616" target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-xl bg-[#25D366] text-white font-bold gap-2 hover:opacity-90 transition-opacity">
                     WhatsApp Chat
                   </a>
                 </div>

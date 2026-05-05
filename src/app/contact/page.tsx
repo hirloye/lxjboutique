@@ -1,7 +1,5 @@
 import { PageBanner } from "@/components/ui/PageBanner";
-import { ContactForm } from "@/components/contact/ContactForm";
 import { MapPin, Phone, Mail, Globe, MessageCircle, Clock } from "lucide-react";
-import { FloralUnderline } from "@/components/ui/FloralUnderline";
 import { ButterflyField } from "@/components/ui/ButterflyField";
 import { Metadata } from "next";
 
